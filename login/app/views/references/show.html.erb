@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="col-md-12">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Title:</strong>
+      <%= @reference.ref_title %>
+    </p>
+
+    <p>
+      <strong>Link:</strong>
+      <%= @reference.ref_link %>
+    </p>
+
+    <p>
+      <strong>Notes:</strong>
+      <%= @reference.ref_note %>
+    </p>
+
+    <%= link_to 'Edit', edit_reference_path(@reference) %> |
+    <%= link_to 'Back', references_path %>
+  </div>
+</div>

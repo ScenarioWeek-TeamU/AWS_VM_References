@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :references
+  get '/references', to: 'references#index'
+
   get    '/register',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

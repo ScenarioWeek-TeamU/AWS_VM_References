@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101032038) do
+ActiveRecord::Schema.define(version: 20161101145120) do
+
+  create_table "references", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "ref_title"
+    t.string   "ref_link"
+    t.string   "ref_note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
