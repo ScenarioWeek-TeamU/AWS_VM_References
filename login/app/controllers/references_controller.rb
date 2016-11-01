@@ -1,10 +1,11 @@
 class ReferencesController < ApplicationController
+  before_action :authenticate_user
   before_action :set_reference, only: [:show, :edit, :update, :destroy]
 
   # GET /references
   # GET /references.json
   def index
-    @references = Reference.all
+    @references = Reference.where(user_id: current_user)
   end
 
   # GET /references/1
@@ -65,6 +66,12 @@ class ReferencesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_reference
       @reference = Reference.find(params[:id])
+    end
+
+    def authenticate_user
+      if !signed_in?
+        redirect_to '/login'
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
