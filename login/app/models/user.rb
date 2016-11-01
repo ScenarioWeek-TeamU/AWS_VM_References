@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-    has_secure_password
-
     attr_accessor :password
 
     email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
