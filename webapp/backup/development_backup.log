@@ -1,0 +1,8 @@
+2016-11-02 15:46:47 -- integrity_check = ok
+2016-11-02 15:46:47 -- db/development.sqlite3 has changed! Backup successful.
+2016-11-02 15:47:19 -- cannot find the database at the following path: db/development.sqlite3
+2016-11-02 15:55:11 -- cannot find the database at the following path: db/development.sqlite3
+2016-11-02 15:56:00 -- cannot find the database at the following path: db/development.sqlite3
+2016-11-02 16:03:24 -- integrity_check = ok
+2016-11-02 16:03:24 -- db/development.sqlite3 has changed! Backup successful.
+2016-11-02 16:03:54 -- cannot find the database at the following path: db/development.sqlite3

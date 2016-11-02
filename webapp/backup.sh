@@ -1,0 +1,1 @@
+s3cmd -r sync backup s3://database-backup-scenario-week-3
