@@ -1,0 +1,24 @@
+<div class="jumbotron" style="margin:0px">
+  <center><h1>Reference Manager</h1></center>
+</div>
+
+<div class="container">
+    <% if flash[:danger] %>
+        <div class="alert alert-danger"><p><%= flash[:danger] %></p></div>
+    <% end %>
+    
+    <div class="col-md-6 col-md-offset-3">
+
+    <center><h1>User Login</h1></center>
+
+    <%= simple_form_for(:session, :url => login_path) do |f| %>
+        <%= f.input :email, label: 'Email Address' %>
+        <%= f.input :password, label: 'Password' %>
+        <%= f.submit 'Login', class: 'btn btn-success' %>
+    <% end %>
+    <br>
+    <p>New user? <%= link_to "Register an account", register_path, {:style=>"text-decoration: none;"} %></p>
+    
+    </div>
+    
+</div>
