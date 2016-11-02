@@ -6,10 +6,10 @@
     <% if flash[:danger] %>
         <div class="alert alert-danger"><p><%= flash[:danger] %></p></div>
     <% end %>
-    
+
     <div class="col-md-6 col-md-offset-3">
 
-    <center><h1>User Login</h1></center>
+    <br>
 
     <%= simple_form_for(:session, :url => login_path) do |f| %>
         <%= f.input :email, label: 'Email Address' %>
@@ -17,8 +17,8 @@
         <%= f.submit 'Login', class: 'btn btn-success' %>
     <% end %>
     <br>
-    <p>New user? <%= link_to "Register an account", register_path, {:style=>"text-decoration: none;"} %></p>
-    
+    <p>New user? <%= link_to "Register an account", register_path, {:class=>"btn btn-xs btn-primary", :style=>"text-decoration: none; color:white"} %></p>
+
     </div>
-    
+
 </div>
