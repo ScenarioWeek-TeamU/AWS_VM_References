@@ -1,0 +1,24 @@
+<div class="jumbotron" style="margin:0px">
+  <center><h1>Login to your account</h1></center>
+</div>
+
+<div class="container">
+    <% if flash[:danger] %>
+        <div class="alert alert-danger"><p><%= flash[:danger] %></p></div>
+    <% end %>
+
+    <div class="col-md-6 col-md-offset-3">
+
+    <br>
+
+    <%= simple_form_for(:session, :url => login_path) do |f| %>
+        <%= f.input :email, label: 'Email Address' %>
+        <%= f.input :password, label: 'Password' %>
+        <%= f.submit 'Login', class: 'btn btn-success' %>
+    <% end %>
+    <br>
+    <p>New user? <a style="text-decoration: none" href="/register">Create an account</a></p>
+
+    </div>
+
+</div>

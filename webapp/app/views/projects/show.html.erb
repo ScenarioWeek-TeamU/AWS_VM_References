@@ -1,0 +1,11 @@
+<% if !notice.blank? %>
+    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+<% end %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

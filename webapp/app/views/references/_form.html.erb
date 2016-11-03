@@ -1,0 +1,15 @@
+<%= simple_form_for(@reference) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.input :ref_title, :label => "Title" %>
+    <%= f.input :ref_link, :label => "Link" %>
+    <%= f.input :ref_note, :label => "Notes" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn btn-success" %>
+    <a style="text-decoration: none; color: white;" class="btn btn-warning" href="/references?pid=<%= current_project.id %>">Cancel</a>
+  </div>
+<% end %>
