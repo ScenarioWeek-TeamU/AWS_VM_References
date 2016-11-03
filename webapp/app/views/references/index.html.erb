@@ -9,17 +9,20 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <th class="col-md-1">#</th>
           <th class="col-md-5">Title</th>
-          <th class="col-md-3">Link</th>
+          <th class="col-md-2">Link</th>
           <th class="col-md-2">Notes</th>
           <th class="col-md-2"></th>
         </tr>
       </thead>
 
       <tbody>
+        <% @i = 0 %>
         <% if @references.exists? %>
           <% @references.each do |reference| %>
             <tr>
+              <td><%= @i=@i+1 %></td>
               <td><%= reference.ref_title %></td>
               <td><%= reference.ref_link %></td>
               <td><%= reference.ref_note %></td>
