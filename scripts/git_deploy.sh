@@ -1,8 +1,6 @@
 #!/bin/sh
 
 ssh app@51.140.162.169 <<EOF
-  sudo su
-  kill -9 $(lsof -ti tcp:3000)
   su app
   kill -9 $(lsof -ti tcp:3000)
   cd ~/AWS_VM_References
