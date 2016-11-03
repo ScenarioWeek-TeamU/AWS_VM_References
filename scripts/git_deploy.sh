@@ -3,7 +3,6 @@
 ssh app@51.140.162.169 <<EOF
   kill -9 $(lsof -ti tcp:3000)
   cd ~/AWS_VM_References
-  git checkout Deployment-Automation
   git pull
   cd webapp
   rake db:migrate
