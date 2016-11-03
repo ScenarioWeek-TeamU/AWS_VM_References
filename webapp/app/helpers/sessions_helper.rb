@@ -32,4 +32,19 @@ module SessionsHelper
         redirect_to signin_path, :notice => "Please login to access this page"
     end
 
+
+     def enter_project(project)
+        session[:pid] = project.id
+        self.current_project = project
+    end
+
+    #setter
+    def current_project=(project)
+        @current_project = project
+    end
+
+    #getter
+    def current_project
+        @current_project ||= Project.find(session[:pid]) if session[:pid]
+    end
 end

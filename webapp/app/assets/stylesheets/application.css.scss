@@ -13,5 +13,18 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets"
-@import "bootstrap"
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+body {
+ padding-top: 50px;
+}

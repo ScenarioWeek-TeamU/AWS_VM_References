@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if signed_in?
-      redirect_to '/references'
+      redirect_to '/projects'
     end
   end
 
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         render :new
     else
         sign_in user
-        redirect_to '/references'
+        redirect_to '/projects'
     end
   end
 

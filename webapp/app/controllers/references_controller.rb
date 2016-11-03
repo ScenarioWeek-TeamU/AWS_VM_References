@@ -5,7 +5,13 @@ class ReferencesController < ApplicationController
   # GET /references
   # GET /references.json
   def index
-    @references = Reference.where(user_id: current_user)
+    if params[:pid].blank?
+      redirect_to projects_path
+    else
+      @project = Project.find(params[:pid])
+      @references = @project.references
+      enter_project @project
+    end
   end
 
   # GET /references/1
@@ -26,10 +32,12 @@ class ReferencesController < ApplicationController
   # POST /references.json
   def create
     @reference = Reference.new(reference_params)
+    @reference.user = current_user
+    @reference.project = current_project
 
     respond_to do |format|
       if @reference.save
-        format.html { redirect_to references_path, notice: 'Reference was successfully created.' }
+        format.html { redirect_to references_path(:pid => current_project.id), notice: 'Reference was successfully created.' }
         format.json { render :show, status: :created, location: @reference }
       else
         format.html { render :new }
@@ -43,7 +51,7 @@ class ReferencesController < ApplicationController
   def update
     respond_to do |format|
       if @reference.update(reference_params)
-        format.html { redirect_to references_path, notice: 'Reference was successfully updated.' }
+        format.html { redirect_to references_path(:pid => current_project.id), notice: 'Reference was successfully updated.' }
         format.json { render :show, status: :ok, location: @reference }
       else
         format.html { render :edit }
@@ -57,7 +65,7 @@ class ReferencesController < ApplicationController
   def destroy
     @reference.destroy
     respond_to do |format|
-      format.html { redirect_to references_url, notice: 'Reference was successfully removed.' }
+      format.html { redirect_to references_path(:pid => current_project.id), notice: 'Reference was successfully removed.' }
       format.json { head :no_content }
     end
   end

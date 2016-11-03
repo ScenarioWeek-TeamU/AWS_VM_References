@@ -1,6 +1,8 @@
 <div class="container">
   <div class="col-md-12">
-    <p class="alert alert-success" id="notice"><%= notice %></p>
+    <% if !notice.blank? %>
+    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+    <% end %>
 
     <p>
       <strong>Title:</strong>

@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+    has_many :projects
+    has_many :references, :through => :projects
+
     attr_accessor :password
 
     email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
