@@ -5,7 +5,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get login" do
     get "/login"
-    assert_response :fail
+    assert_response :success
   end
 
   test "can login to app with correct details" do
