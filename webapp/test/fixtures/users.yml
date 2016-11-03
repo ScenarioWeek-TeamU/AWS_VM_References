@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+#AUTHENTIC USER
 one:
-  name: MyString
-  email: MyString
-  encrypted_password: MyString
-  salt: MyString
+  name: testuser
+  email: testuser@test.com
+  encrypted_password: 9ac45e61bdd614b62f6e97ff2b7d7421e343fc3e7b84844665bb92882dde2fbd
+  salt: bb9adf2b501c9461a551d01a48684ac8b51636cd10c3720afd68b38037f47aea
 
+#USER WITH INCORRECT DETAILS
 two:
   name: MyString
   email: MyString

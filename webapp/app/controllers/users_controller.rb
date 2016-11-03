@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
         sign_in @user
-        redirect_to @user, notice: "You have been successfully registered!"
+        redirect_to projects_path, notice: "You have been successfully registered!"
     else
         render action: "new"
     end
