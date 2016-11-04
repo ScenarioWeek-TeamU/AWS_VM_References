@@ -21,5 +21,4 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_equal '/login', path
   end
 
-
 end

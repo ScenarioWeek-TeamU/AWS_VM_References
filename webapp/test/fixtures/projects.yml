@@ -1,9 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+project1:
   title: testProject1
-  user_id: 6
+  user_id: one
 
-two:
+project2:
   title: testProject2
-  user_id: 6
+  user_id: one
+
