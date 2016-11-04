@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get    '/projects/new',  to: 'projects#new'
+  get    '/references/new',  to: 'references#new'
+  get    '/projects/:id',  to: 'projects#index'
+  get    '/references/:id',  to: 'references#index'
+
   resources :projects
 
   resources :references
@@ -10,6 +15,7 @@ Rails.application.routes.draw do
 
   get    '/users',      to: 'users#new'
   get    '/users/:id',  to: 'users#new'
+
 
   resources :users
 

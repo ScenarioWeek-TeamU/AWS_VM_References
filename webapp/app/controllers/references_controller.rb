@@ -12,9 +12,13 @@ class ReferencesController < ApplicationController
     if params[:pid].blank?
       redirect_to projects_path
     else
-      @project = Project.find(params[:pid])
-      @references = @project.references
-      enter_project @project
+      @project = Project.where(:id => params[:pid]).where(:user_id => current_user.id).first
+      if @project.blank?
+        redirect_to projects_path
+      else
+        @references = @project.references
+        enter_project @project
+      end
     end
   end
 
