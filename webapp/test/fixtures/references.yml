@@ -1,13 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 6
-  ref_title: MyString
-  ref_link: MyString
-  ref_note: MyString
+reference1:
+  user_id: one
+  project_id: project1
+  ref_title: reftitle1
+  ref_link: reflink1
+  ref_note: refnote1
 
-two:
-  user_id: 6
-  ref_title: MyString
-  ref_link: MyString
-  ref_note: MyString
+reference2:
+  user_id: one
+  project_id: project1
+  ref_title: reftitle2
+  ref_link: reflink2
+  ref_note: refnote2
+
+reference3:
+  user_id: one
+  project_id: project2
+  ref_title: reftitle3
+  ref_link: reflink3
+  ref_note: refnote3
