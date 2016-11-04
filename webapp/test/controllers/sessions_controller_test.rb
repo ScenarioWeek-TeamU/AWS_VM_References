@@ -13,7 +13,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    assert_equal '/projectss', path
+    assert_equal '/projects', path
   end
 
   test "cannot login to app with incorrect details" do
