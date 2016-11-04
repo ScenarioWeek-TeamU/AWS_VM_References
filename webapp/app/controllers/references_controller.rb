@@ -2,6 +2,10 @@ class ReferencesController < ApplicationController
   before_action :authenticate_user
   before_action :set_reference, only: [:show, :edit, :update, :destroy]
 
+  rescue_from ActiveRecord::RecordNotFound do
+    redirect_to projects_path
+  end
+
   # GET /references
   # GET /references.json
   def index

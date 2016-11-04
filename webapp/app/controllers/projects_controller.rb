@@ -2,6 +2,10 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+  rescue_from ActiveRecord::RecordNotFound do
+    redirect_to '/'
+  end
+
   # GET /projects
   # GET /projects.json
   def index
